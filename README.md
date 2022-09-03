@@ -7,6 +7,7 @@ Proyecto de desarrollo para la tesis de la Maestría en Ciencias del Procesamien
 - [Code scaffolding](#code-scaffolding)
   - [Modules generation](#modules-generation)
   - [Components generation](#components-generation)
+  - [Services generation](#services-generation)
 - [How to make commits](#how-to-make-commits)
 - [Build](#build)
 - [Running unit tests](#running-unit-tests)
@@ -159,10 +160,18 @@ npm run ng g m modules/<MODULE_NAME> -- --module=<PARENT_MODULE>.module --routin
 
 ## Components generation
 
-Generate component:
+Generate component in a module:
 
 ```bash
-npm run ng g c modules/welcome
+npm run ng g c modules/<MODULE_NAME>
+```
+
+## Services generation
+
+Generate service:
+
+```bash
+npm run ng g s services/dataset
 ```
 
 # How to make commits
