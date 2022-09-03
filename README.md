@@ -5,6 +5,8 @@ Proyecto de desarrollo para la tesis de la Maestría en Ciencias del Procesamien
 - [Creation of new angular project](#creation-of-new-angular-project)
 - [Development server](#development-server)
 - [Code scaffolding](#code-scaffolding)
+  - [Modules generation](#modules-generation)
+  - [Components generation](#components-generation)
 - [How to make commits](#how-to-make-commits)
 - [Build](#build)
 - [Running unit tests](#running-unit-tests)
@@ -128,6 +130,40 @@ npm run start
 # Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Modules generation
+
+Generate a module:
+
+```bash
+npm run ng g m modules/<MODULE_NAME>
+```
+
+Generate a module with specific parent:
+
+```bash
+npm run ng g m modules/<MODULE_NAME> -- --module=app.module
+```
+
+Generate module with specific parent, and routing:
+
+```bash
+npm run ng g m modules/<MODULE_NAME> -- --module=<PARENT_MODULE>.module --routing
+```
+
+Generate module with specific parent, routing and route (this also create a component):
+
+```bash
+npm run ng g m modules/<MODULE_NAME> -- --module=<PARENT_MODULE>.module --routing --route=<ROUTE_NAME>
+```
+
+## Components generation
+
+Generate component:
+
+```bash
+npm run ng g c modules/welcome
+```
 
 # How to make commits
 
