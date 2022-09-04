@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NotFoundComponent } from './not-found.component';
+import { TrainingComponent } from './training.component';
 
 @NgModule({
-  declarations: [NotFoundComponent],
+  declarations: [TrainingComponent],
   imports: [CommonModule],
 })
-export class NotFoundModule {}
+export class TrainingModule {}
