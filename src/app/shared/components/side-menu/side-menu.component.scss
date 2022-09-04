@@ -10,4 +10,8 @@
 .sidenav {
   background-color: #f2f2f2;
   border-right: 1px solid #dddddd;
+
+  mat-nav-list {
+    padding: 0;
+  }
 }

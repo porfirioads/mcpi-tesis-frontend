@@ -1,40 +1,15 @@
 <mat-drawer-container class="container" autosize>
   <mat-drawer class="sidenav" mode="side" opened>
     <mat-nav-list>
-      <a mat-list-item>
-        <mat-icon mat-list-icon>home</mat-icon>
-        <a matLine>Inicio</a>
+      <a
+        mat-list-item
+        [routerLink]="menuOption.url"
+        *ngFor="let menuOption of menuOptions"
+        [routerLinkActive]="'mat-list-single-selected-option'"
+      >
+        <mat-icon mat-list-icon>{{ menuOption.icon }}</mat-icon>
+        <a matLine>{{ menuOption.label }}</a>
       </a>
-      <a mat-list-item>
-        <mat-icon mat-list-icon>dataset</mat-icon>
-        <a matLine>Datasets</a>
-      </a>
-      <a mat-list-item>
-        <mat-icon mat-list-icon>model_training</mat-icon>
-        <a matLine>Entrenamiento</a>
-      </a>
-      <a mat-list-item>
-        <mat-icon mat-list-icon>start</mat-icon>
-        <a matLine>Clasificación</a>
-      </a>
-      <a mat-list-item>
-        <mat-icon mat-list-icon>analytics</mat-icon>
-        <a matLine>Visualizador</a>
-      </a>
-      <!-- <a
-          mat-list-item
-          [href]="menu.url"
-          [routerLinkActive]="'mat-list-single-selected-option'"
-        >
-          <mat-icon
-            mat-list-icon
-            class="material-icons-outlined"
-            color="primary"
-          >
-            {{ menu.icon }}
-          </mat-icon>
-          <a matLine>{{ "MENU_" + menu.name | translate }}</a>
-        </a> -->
     </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content class="content"
