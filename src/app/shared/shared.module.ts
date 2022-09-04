@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { AppRoutingModule } from '../app-routing.module';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, SideMenuComponent],
@@ -20,6 +21,7 @@ import { AppRoutingModule } from '../app-routing.module';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    MatProgressBarModule,
   ],
   exports: [HeaderComponent, FooterComponent, SideMenuComponent],
 })

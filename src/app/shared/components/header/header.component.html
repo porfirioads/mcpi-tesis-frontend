@@ -2,4 +2,11 @@
   <button mat-icon-button (click)="toggle()">
     <mat-icon>menu</mat-icon>
   </button>
+  <span>{{ appName }}</span>
+  <span class="spacer"></span>
 </mat-toolbar>
+
+<mat-progress-bar
+  *ngIf="interceptorLoading"
+  mode="indeterminate"
+></mat-progress-bar>
