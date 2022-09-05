@@ -10,6 +10,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { AppRoutingModule } from '../app-routing.module';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, SideMenuComponent],
@@ -22,6 +23,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatSidenavModule,
     MatListModule,
     MatProgressBarModule,
+    FlexLayoutModule,
   ],
   exports: [HeaderComponent, FooterComponent, SideMenuComponent],
 })

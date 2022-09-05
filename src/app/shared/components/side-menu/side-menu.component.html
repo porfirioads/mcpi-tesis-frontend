@@ -13,9 +13,9 @@
       </a>
     </mat-nav-list>
   </mat-drawer>
-  <mat-drawer-content class="drawer-content">
+  <mat-drawer-content class="drawer-content" fxLayout="column">
     <app-header [appName]="'MCPI'" [drawer]="drawer"></app-header>
-    <div class="main-container">
+    <div fxFlex fxLayout="column" class="main-container">
       <router-outlet></router-outlet>
     </div>
   </mat-drawer-content>

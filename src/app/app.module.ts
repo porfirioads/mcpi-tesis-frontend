@@ -18,15 +18,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
+    FlexLayoutModule,
     NotFoundModule,
     WelcomeModule,
     DatasetsModule,
     TrainingModule,
     ClassificationModule,
     VisualizationModule,
-    FlexLayoutModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
