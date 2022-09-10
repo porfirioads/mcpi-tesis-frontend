@@ -11,6 +11,7 @@ import { TrainingModule } from './modules/training/training.module';
 import { VisualizationModule } from './modules/visualization/visualization.module';
 import { ClassificationModule } from './modules/classification/classification.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CleaningModule } from './modules/cleaning/cleaning.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -25,6 +26,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     TrainingModule,
     ClassificationModule,
     VisualizationModule,
+    CleaningModule,
   ],
   bootstrap: [AppComponent],
 })
