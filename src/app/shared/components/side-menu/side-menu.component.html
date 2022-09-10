@@ -1,6 +1,6 @@
 <mat-drawer-container class="drawer-container" autosize>
   <mat-drawer #drawer class="drawer" mode="side" opened>
-    <img class="logo" src="../../../../assets/img/logo-uaz.svg" alt="UAZ" />
+    <img class="logo" src="../../../../assets/img/logo-mcpi.png" alt="UAZ" />
     <mat-nav-list>
       <a
         mat-list-item
@@ -13,9 +13,9 @@
       </a>
     </mat-nav-list>
   </mat-drawer>
-  <mat-drawer-content class="drawer-content">
-    <app-header [appName]="'PLATAFORMA DE ANÁLISIS DE SENTIMIENTOS'" [drawer]="drawer"></app-header>
-    <div class="main-container">
+  <mat-drawer-content class="drawer-content" fxLayout="column">
+    <app-header [appName]="'MCPI'" [drawer]="drawer"></app-header>
+    <div fxFlex fxLayout="column" class="main-container">
       <router-outlet></router-outlet>
     </div>
   </mat-drawer-content>
