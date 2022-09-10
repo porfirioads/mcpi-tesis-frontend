@@ -6,6 +6,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [DatasetsComponent],
@@ -16,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
     FlexLayoutModule,
     MatButtonModule,
     MatIconModule,
+    MatTooltipModule,
   ],
 })
 export class DatasetsModule {}
