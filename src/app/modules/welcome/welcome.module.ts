@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [WelcomeComponent],
@@ -14,6 +15,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatIconModule,
     MatDividerModule,
     FlexLayoutModule,
+    RouterModule
   ],
 })
 export class WelcomeModule {}

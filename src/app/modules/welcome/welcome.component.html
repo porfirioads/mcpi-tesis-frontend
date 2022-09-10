@@ -1,4 +1,4 @@
-<div fxFlex fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="20px">
+<div fxFill fxLayout="column" fxLayoutAlign="space-around stretch">
   <div fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="center start">
     <div fxHide.sm fxHide.lt-sm fxFlex="25"></div>
     <img
@@ -11,13 +11,22 @@
   <div class="title">
     <h1>PLATAFORMA DE ANÁLISIS DE SENTIMIENTOS</h1>
   </div>
-  <p class="description">
-    Con esta plataforma podrás realizar tareas de análisis de sentimientos a tus
-    propios datasets. Te guiaremos paso por paso desde el entrenamiento de tus
-    modelos hasta la visualización de los resultados obtenidos. Pulsa en el
-    siguiente botón para iniciar a usar la aplicación.
-  </p>
-  <div fxLayout="row" fxLayoutAlign="center">
-    <button mat-button mat-raised-button color="accent">Comenzar</button>
+  <div fxLayout="column">
+    <p class="description">
+      Con esta plataforma podrás realizar tareas de análisis de sentimientos a
+      tus propios datasets. Te guiaremos paso por paso desde el entrenamiento de
+      tus modelos hasta la visualización de los resultados obtenidos. Pulsa en
+      el siguiente botón para iniciar a usar la aplicación.
+    </p>
+    <div fxLayout="row" fxLayoutAlign="center">
+      <button
+        mat-raised-button
+        color="accent"
+        class="start-button"
+        [routerLink]="'/datasets'"
+      >
+        Comenzar
+      </button>
+    </div>
   </div>
 </div>

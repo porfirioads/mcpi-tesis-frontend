@@ -1,8 +1,13 @@
-<div fxFlex fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="20px">
-  <h1>Listado de datasets</h1>
+<div fxFill fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="20px">
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="page-header">
+    <h1>Listado de datasets</h1>
+    <button mat-raised-button color="accent">
+      <mat-icon>add</mat-icon>
+      Subir nuevo dataset
+    </button>
+  </div>
 
   <table
-    fxFlex
     mat-table
     [dataSource]="dataSource"
     matSort

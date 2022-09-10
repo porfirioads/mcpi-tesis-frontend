@@ -22,10 +22,16 @@ h2 {
 div.title {
   padding-top: 50px;
   padding-bottom: 50px;
-  border: 1px solid gray;
   border-radius: 10px;
+  background-color: #546b94;
+  color: white;
 }
 
 p.description {
   font-size: 12pt;
+}
+
+button.start-button {
+  font-size: 15pt;
+  padding: 10px 50px;
 }
