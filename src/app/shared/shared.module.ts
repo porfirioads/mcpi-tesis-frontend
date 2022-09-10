@@ -11,9 +11,15 @@ import { MatListModule } from '@angular/material/list';
 import { AppRoutingModule } from '../app-routing.module';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { PageTitleComponent } from './components/page-title/page-title.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SideMenuComponent],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    SideMenuComponent,
+    PageTitleComponent,
+  ],
   imports: [
     CommonModule,
     AppRoutingModule,
@@ -25,6 +31,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatProgressBarModule,
     FlexLayoutModule,
   ],
-  exports: [HeaderComponent, FooterComponent, SideMenuComponent],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    SideMenuComponent,
+    PageTitleComponent,
+  ],
 })
 export class SharedModule {}

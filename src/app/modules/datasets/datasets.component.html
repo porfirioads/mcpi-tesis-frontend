@@ -1,11 +1,12 @@
 <div fxFill fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="20px">
-  <div fxLayout="row" fxLayoutAlign="space-between center" class="page-header">
-    <h1>Listado de datasets</h1>
-    <button mat-raised-button color="accent">
-      <mat-icon>add</mat-icon>
-      Subir nuevo dataset
-    </button>
-  </div>
+  <app-page-title title="Listado de datasets">
+    <ng-container buttons>
+      <button mat-raised-button color="accent">
+        <mat-icon>add</mat-icon>
+        Subir nuevo dataset
+      </button>
+    </ng-container>
+  </app-page-title>
 
   <table
     mat-table

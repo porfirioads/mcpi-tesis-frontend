@@ -7,11 +7,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [DatasetsComponent],
   imports: [
     CommonModule,
+    SharedModule,
     MatTableModule,
     MatSortModule,
     FlexLayoutModule,
