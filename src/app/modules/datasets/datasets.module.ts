@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { SharedModule } from '../../shared/shared.module';
+import { FileUploaderModule } from '../../shared/components/file-uploader/file-uploader.module';
 
 @NgModule({
   declarations: [DatasetsComponent],
@@ -20,6 +21,7 @@ import { SharedModule } from '../../shared/shared.module';
     MatButtonModule,
     MatIconModule,
     MatTooltipModule,
+    FileUploaderModule,
   ],
 })
 export class DatasetsModule {}

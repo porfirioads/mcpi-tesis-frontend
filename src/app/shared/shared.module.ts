@@ -12,6 +12,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PageTitleComponent } from './components/page-title/page-title.component';
+import { FileUploaderModule } from './components/file-uploader/file-uploader.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { PageTitleComponent } from './components/page-title/page-title.component
     MatListModule,
     MatProgressBarModule,
     FlexLayoutModule,
+    FileUploaderModule,
   ],
   exports: [
     HeaderComponent,

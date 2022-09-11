@@ -1,0 +1,14 @@
+<input #fileInput hidden type="file" (change)="uploadFiles($event)" />
+
+<button
+  mat-raised-button
+  color="accent"
+  (click)="fileInput.click()"
+  [disabled]="uploading"
+>
+  <mat-icon>
+    <mat-spinner diameter="20" *ngIf="uploading; else attachIcon"></mat-spinner>
+    <ng-template #attachIcon>attach_file</ng-template>
+  </mat-icon>
+  {{ label }}
+</button>

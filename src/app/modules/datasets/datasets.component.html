@@ -1,10 +1,11 @@
 <div fxFill fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="20px">
   <app-page-title title="Listado de datasets">
     <ng-container buttons>
-      <button mat-raised-button color="accent">
+      <!-- <button mat-raised-button color="accent">
         <mat-icon>add</mat-icon>
         Subir nuevo dataset
-      </button>
+      </button> -->
+      <app-file-uploader [label]="'Subir dataset'"></app-file-uploader>
     </ng-container>
   </app-page-title>
 
