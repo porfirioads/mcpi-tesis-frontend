@@ -11,22 +11,20 @@
   <div class="title">
     <h1>PLATAFORMA DE ANÁLISIS DE SENTIMIENTOS</h1>
   </div>
-  <div fxLayout="column">
+  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px">
     <p class="description">
-      Con esta plataforma podrás realizar tareas de análisis de sentimientos a
+      Con esta plataforma podrás realizar tareas de análisis de sentimientos con
       tus propios datasets. Te guiaremos paso por paso desde el entrenamiento de
       tus modelos hasta la visualización de los resultados obtenidos. Pulsa en
       el siguiente botón para iniciar a usar la aplicación.
     </p>
-    <div fxLayout="row" fxLayoutAlign="center">
-      <button
-        mat-raised-button
-        color="accent"
-        class="start-button"
-        [routerLink]="'/datasets'"
-      >
-        Comenzar
-      </button>
-    </div>
+    <button
+      mat-raised-button
+      color="accent"
+      class="start-button"
+      [routerLink]="'/datasets'"
+    >
+      Comenzar
+    </button>
   </div>
 </div>
