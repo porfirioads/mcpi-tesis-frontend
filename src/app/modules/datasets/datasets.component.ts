@@ -1,15 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 export interface Dataset {
   name: string;
-  weight: string;
 }
 
 const DATASETS: Dataset[] = [
-  { name: '1659804589_respuestas_tucson.csv', weight: '100MB' },
-  { name: '1659804595_otro_dataset.csv', weight: '55MB' },
+  { name: '1659804589_respuestas_tucson.csv' },
+  { name: '1659804595_otro_dataset.csv' },
 ];
 
 @Component({
@@ -18,12 +18,12 @@ const DATASETS: Dataset[] = [
   styleUrls: ['./datasets.component.scss'],
 })
 export class DatasetsComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'weight', 'actions'];
+  displayedColumns: string[] = ['name', 'actions'];
   dataSource = new MatTableDataSource(DATASETS);
 
   ngOnInit(): void {}
 
-  constructor() {}
+  constructor(private snackBar: MatSnackBar) {}
 
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -37,6 +37,19 @@ export class DatasetsComponent implements OnInit {
       console.log(`Sorted ${sortState.direction} by ${sortState.active}`);
     } else {
       console.log('Sorting cleared');
+    }
+  }
+
+  fileUpload(fileName: string | null) {
+    console.log(fileName);
+    if (fileName) {
+      DATASETS.push({ name: fileName });
+      this.dataSource = new MatTableDataSource(DATASETS);
+      this.snackBar.open('El dataset se subió correctamente', 'Aceptar', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'right',
+      });
     }
   }
 }

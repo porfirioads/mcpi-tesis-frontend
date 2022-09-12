@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SimulationHelper } from '../../helpers/simulation.helper';
 
 @Component({
@@ -8,6 +8,7 @@ import { SimulationHelper } from '../../helpers/simulation.helper';
 })
 export class FileUploaderComponent implements OnInit {
   @Input() label = 'Subir archivo';
+  @Output() fileUploaded = new EventEmitter<string | null>();
   uploading = false;
 
   constructor() {}
@@ -17,7 +18,8 @@ export class FileUploaderComponent implements OnInit {
   async uploadFiles($event: Event) {
     const files = ($event.target as HTMLInputElement).files;
     this.uploading = true;
-    await SimulationHelper.delay(5);
+    await SimulationHelper.delay(2);
+    this.fileUploaded.emit(files ? files[0].name : null);
     this.uploading = false;
   }
 }

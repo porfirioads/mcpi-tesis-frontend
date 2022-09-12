@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { SharedModule } from '../../shared/shared.module';
 import { FileUploaderModule } from '../../shared/components/file-uploader/file-uploader.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [DatasetsComponent],
@@ -22,6 +23,7 @@ import { FileUploaderModule } from '../../shared/components/file-uploader/file-u
     MatIconModule,
     MatTooltipModule,
     FileUploaderModule,
+    MatSnackBarModule,
   ],
 })
 export class DatasetsModule {}
