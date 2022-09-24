@@ -6,7 +6,7 @@ import { DatasetsComponent } from './modules/datasets/containers/datasets.compon
 import { TrainingComponent } from './modules/training/containers/training.component';
 import { VisualizationComponent } from './modules/visualization/containers/visualization.component';
 import { WelcomeComponent } from './modules/welcome/containers/welcome.component';
-import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { NotFoundComponent } from './shared/components/not-found/containers/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },

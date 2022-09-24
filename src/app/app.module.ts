@@ -11,7 +11,7 @@ import { TrainingModule } from './modules/training/training.module';
 import { VisualizationModule } from './modules/visualization/visualization.module';
 import { WelcomeModule } from './modules/welcome/welcome.module';
 import { NotFoundModule } from './shared/components/not-found/not-found.module';
-import { SharedModule } from './shared/shared.module';
+import { SideMenuModule } from './shared/components/side-menu/side-menu.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,8 +19,8 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule,
     FlexLayoutModule,
+    SideMenuModule,
     NotFoundModule,
     WelcomeModule,
     DatasetsModule,

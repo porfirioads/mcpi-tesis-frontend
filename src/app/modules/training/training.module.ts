@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { SharedModule } from '../../shared/shared.module';
 import { TrainingComponent } from './containers/training.component';
+import { PageTitleModule } from '../../shared/components/page-title/page-title.module';
 
 @NgModule({
   declarations: [TrainingComponent],
-  imports: [CommonModule, FlexLayoutModule, SharedModule],
+  imports: [CommonModule, FlexLayoutModule, PageTitleModule],
 })
 export class TrainingModule {}
