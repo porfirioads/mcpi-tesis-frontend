@@ -1,12 +1,9 @@
 <div fxFill fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="20px">
   <app-page-title title="Listado de datasets">
     <ng-container buttons>
-      <!-- <button mat-raised-button color="accent">
-        <mat-icon>add</mat-icon>
-        Subir nuevo dataset
-      </button> -->
       <app-file-uploader
         [label]="'Subir dataset'"
+        [accept]="'text/csv'"
         (fileUploaded)="fileUpload($event)"
       ></app-file-uploader>
     </ng-container>

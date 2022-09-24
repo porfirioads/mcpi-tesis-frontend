@@ -1,4 +1,10 @@
-<input #fileInput hidden type="file" (change)="uploadFiles($event)" />
+<input
+  #fileInput
+  hidden
+  type="file"
+  (change)="uploadFiles($event)"
+  [accept]="accept"
+/>
 
 <button
   mat-raised-button

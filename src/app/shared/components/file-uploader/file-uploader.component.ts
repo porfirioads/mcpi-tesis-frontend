@@ -8,6 +8,7 @@ import { Timer } from '../../utils/timer';
 })
 export class FileUploaderComponent implements OnInit {
   @Input() label = 'Subir archivo';
+  @Input() accept = '';
   @Output() fileUploaded = new EventEmitter<string | null>();
   uploading = false;
 
