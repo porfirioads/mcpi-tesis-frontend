@@ -1,4 +1,4 @@
-export class SimulationHelper {
+export class Timer {
   static async delay(time: number): Promise<void> {
     return new Promise((resolve) => {
       setTimeout(() => {

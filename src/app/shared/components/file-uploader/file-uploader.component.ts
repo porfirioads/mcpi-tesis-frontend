@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { SimulationHelper } from '../../helpers/simulation.helper';
+import { Timer } from '../../utils/timer';
 
 @Component({
   selector: 'app-file-uploader',
@@ -18,7 +18,7 @@ export class FileUploaderComponent implements OnInit {
   async uploadFiles($event: Event) {
     const files = ($event.target as HTMLInputElement).files;
     this.uploading = true;
-    await SimulationHelper.delay(2);
+    await Timer.delay(2);
     this.fileUploaded.emit(files ? files[0].name : null);
     this.uploading = false;
   }
