@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DatasetsComponent } from './datasets.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -10,6 +9,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { SharedModule } from '../../shared/shared.module';
 import { FileUploaderModule } from '../../shared/components/file-uploader/file-uploader.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NgxCsvParserModule } from 'ngx-csv-parser';
+import { DatasetsComponent } from './containers/datasets.component';
 
 @NgModule({
   declarations: [DatasetsComponent],
@@ -24,6 +25,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatTooltipModule,
     FileUploaderModule,
     MatSnackBarModule,
+    NgxCsvParserModule,
   ],
 })
 export class DatasetsModule {}

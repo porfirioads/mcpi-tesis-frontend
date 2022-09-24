@@ -31,7 +31,6 @@ import { FileUploaderModule } from './components/file-uploader/file-uploader.mod
     MatListModule,
     MatProgressBarModule,
     FlexLayoutModule,
-    FileUploaderModule,
   ],
   exports: [
     HeaderComponent,

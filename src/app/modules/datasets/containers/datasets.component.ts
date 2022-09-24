@@ -40,10 +40,10 @@ export class DatasetsComponent implements OnInit {
     }
   }
 
-  fileUpload(fileName: string | null) {
-    console.log(fileName);
-    if (fileName) {
-      DATASETS.push({ name: fileName });
+  onFileUploaded(file: File | null) {
+    console.log(file);
+    if (file) {
+      DATASETS.push({ name: file.name });
       this.dataSource = new MatTableDataSource(DATASETS);
       this.snackBar.open('El dataset se subió correctamente', 'Aceptar', {
         duration: 3000,

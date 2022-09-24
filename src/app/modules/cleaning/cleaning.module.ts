@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CleaningComponent } from './cleaning.component';
 import { SharedModule } from '../../shared/shared.module';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { CleaningComponent } from './containers/cleaning.component';
 
 @NgModule({
   declarations: [CleaningComponent],
