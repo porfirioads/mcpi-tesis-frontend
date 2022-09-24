@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { VisualizationComponent } from './containers/visualization.component';
-import { PageTitleModule } from '../../shared/components/page-title/page-title.module';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [VisualizationComponent],
-  imports: [CommonModule, FlexLayoutModule, PageTitleModule],
+  imports: [SharedModule],
 })
 export class VisualizationModule {}

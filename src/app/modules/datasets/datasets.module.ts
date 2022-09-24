@@ -7,17 +7,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [DatasetsComponent],
-  imports: [
-    CommonModule,
-    PageTitleModule,
-    FileUploaderModule,
-    MatTableModule,
-    MatSortModule,
-    MatButtonModule,
-    MatIconModule,
-  ],
+  imports: [SharedModule, FileUploaderModule, MatTableModule, MatSortModule],
 })
 export class DatasetsModule {}

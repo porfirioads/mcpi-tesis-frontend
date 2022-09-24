@@ -6,17 +6,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { HeaderModule } from '../header/header.module';
 import { MatListModule } from '@angular/material/list';
+import { SharedModule } from '../../shared.module';
 
 @NgModule({
   declarations: [SideMenuComponent],
-  imports: [
-    CommonModule,
-    RouterModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    HeaderModule,
-  ],
+  imports: [SharedModule, MatSidenavModule, MatListModule, HeaderModule],
   exports: [SideMenuComponent],
 })
 export class SideMenuModule {}
