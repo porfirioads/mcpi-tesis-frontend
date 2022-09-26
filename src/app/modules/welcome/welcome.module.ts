@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { WelcomeComponent } from './containers/welcome.component';
-import { SharedModule } from '../../shared/shared.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [WelcomeComponent],
-  imports: [SharedModule],
+  imports: [CommonModule],
 })
 export class WelcomeModule {}

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './containers/app.component';
 import { SideMenuModule } from './shared/components/side-menu/side-menu.module';
-import { SharedModule } from './shared/shared.module';
+import { CommonModule } from '@angular/common';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,9 +12,9 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    SharedModule,
     SideMenuModule,
   ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

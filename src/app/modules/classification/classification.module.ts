@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { ClassificationComponent } from './containers/classification.component';
-import { SharedModule } from '../../shared/shared.module';
+import { PageTitleModule } from '../../shared/components/page-title/page-title.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [ClassificationComponent],
-  imports: [SharedModule],
+  imports: [CommonModule, PageTitleModule],
 })
 export class ClassificationModule {}
