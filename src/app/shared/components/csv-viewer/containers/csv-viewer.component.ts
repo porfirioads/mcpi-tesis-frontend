@@ -24,12 +24,15 @@ export class CsvViewerComponent implements OnInit, OnChanges {
   ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    if ('file' in changes) {
+    const parseFile = 'file' in changes || this.file;
+
+    if (parseFile) {
       this.parseCsv();
     }
   }
 
   async parseCsv() {
+    console.log('CsvViewerComponent.parseCsv()');
     const result = await lastValueFrom(
       this.ngxCsvParser.parse(this.file, {
         header: this.header,

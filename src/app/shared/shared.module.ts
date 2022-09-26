@@ -6,26 +6,29 @@ import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { PageTitleModule } from './components/page-title/page-title.module';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     RouterModule,
+    PageTitleModule,
     FlexLayoutModule,
     MatSnackBarModule,
     MatButtonModule,
     MatIconModule,
-    PageTitleModule,
+    MatTooltipModule,
   ],
   exports: [
     CommonModule,
     RouterModule,
+    PageTitleModule,
     FlexLayoutModule,
     MatSnackBarModule,
     MatButtonModule,
     MatIconModule,
-    PageTitleModule,
+    MatTooltipModule,
   ],
 })
 export class SharedModule {}

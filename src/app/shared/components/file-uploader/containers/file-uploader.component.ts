@@ -16,7 +16,7 @@ export class FileUploaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  async uploadFiles($event: Event): Promise<void> {
+  async onFilesChanged($event: Event): Promise<void> {
     const files = ($event.target as HTMLInputElement).files;
     this.uploading = true;
     await Timer.delay(2);
