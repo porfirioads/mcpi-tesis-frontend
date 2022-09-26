@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { CsvViewerComponent } from '../../../shared/components/csv-viewer/containers/csv-viewer.component';
+import { ICsvViewer } from '../../../shared/components/csv-viewer/interfaces/csv-viewer.interface';
 
 export interface Dataset {
   name: string;
@@ -23,7 +26,7 @@ export class DatasetsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private snackBar: MatSnackBar, private matDialog: MatDialog) {}
 
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -42,7 +45,15 @@ export class DatasetsComponent implements OnInit {
 
   onFileUploaded(file: File | null) {
     console.log(file);
+
     if (file) {
+      const dialogData: ICsvViewer = {
+        file: file,
+        delimiter: ',',
+        header: true,
+      };
+      this.matDialog.open(CsvViewerComponent, { data: dialogData });
+
       DATASETS.push({ name: file.name });
       this.dataSource = new MatTableDataSource(DATASETS);
       this.snackBar.open('El dataset se subió correctamente', 'Aceptar', {
