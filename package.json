@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "format": "pretty-quick --staged"
+    "format": "pretty-quick --staged",
+    "lint": "ng lint --fix"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +30,11 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.1",
+    "@angular-eslint/builder": "14.1.2",
+    "@angular-eslint/eslint-plugin": "14.1.2",
+    "@angular-eslint/eslint-plugin-template": "14.1.2",
+    "@angular-eslint/schematics": "14.1.2",
+    "@angular-eslint/template-parser": "14.1.2",
     "@angular/cli": "~14.2.1",
     "@angular/compiler-cli": "^14.0.0",
     "@commitlint/cli": "^17.1.2",
@@ -36,6 +42,10 @@
     "@types/jasmine": "~4.0.0",
     "@types/jest": "^29.0.3",
     "@types/mocha": "^9.1.1",
+    "@typescript-eslint/eslint-plugin": "5.37.0",
+    "@typescript-eslint/parser": "5.37.0",
+    "eslint": "^8.23.1",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^8.0.1",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",

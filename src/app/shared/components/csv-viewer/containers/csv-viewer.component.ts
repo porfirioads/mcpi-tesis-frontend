@@ -4,10 +4,10 @@ import {
   Inject,
   Input,
   OnChanges,
-  OnInit,
   SimpleChanges,
 } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
 import { NgxCsvParser, NgxCSVParserError } from 'ngx-csv-parser';
 import { lastValueFrom } from 'rxjs';
 import { ICsvViewer } from '../interfaces/csv-viewer.interface';
@@ -20,7 +20,9 @@ import { ICsvViewer } from '../interfaces/csv-viewer.interface';
 export class CsvViewerComponent implements AfterViewInit, OnChanges {
   @Input() file!: File;
   @Input() delimiter = ',';
-  @Input() header = false;
+  @Input() header = true;
+  displayedColumns!: string[];
+  dataSource!: MatTableDataSource<any>;
   records: any[] = [];
 
   constructor(
@@ -33,10 +35,12 @@ export class CsvViewerComponent implements AfterViewInit, OnChanges {
   }
 
   ngAfterViewInit(): void {
+    console.log('CsvViewerComponent.ngAfterViewInit()');
     this.parseCsv();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    console.log('CsvViewerComponent.ngOnChanges()');
     const parseFile = 'file' in changes || this.file;
 
     if (parseFile) {
@@ -60,6 +64,7 @@ export class CsvViewerComponent implements AfterViewInit, OnChanges {
     }
 
     this.records = result;
-    console.log('Csv records', this.records);
+    this.displayedColumns = ['Answer', 'Question', 'Sentiment'];
+    this.dataSource = new MatTableDataSource(this.records);
   }
 }

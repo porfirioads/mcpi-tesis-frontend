@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatSort, Sort } from '@angular/material/sort';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CsvViewerComponent } from '../../../shared/components/csv-viewer/containers/csv-viewer.component';
 import { ICsvViewer } from '../../../shared/components/csv-viewer/interfaces/csv-viewer.interface';
@@ -20,27 +20,18 @@ const DATASETS: Dataset[] = [
   templateUrl: './datasets.component.html',
   styleUrls: ['./datasets.component.scss'],
 })
-export class DatasetsComponent implements OnInit {
+export class DatasetsComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['name', 'actions'];
   dataSource = new MatTableDataSource(DATASETS);
-
-  ngOnInit(): void {}
 
   constructor(private snackBar: MatSnackBar, private matDialog: MatDialog) {}
 
   @ViewChild(MatSort) sort!: MatSort;
 
+  ngOnInit(): void {}
+
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
-  }
-
-  /** Announce the change in sort state for assistive technology. */
-  announceSortChange(sortState: Sort) {
-    if (sortState.direction) {
-      console.log(`Sorted ${sortState.direction} by ${sortState.active}`);
-    } else {
-      console.log('Sorting cleared');
-    }
   }
 
   onFileUploaded(file: File | null) {
