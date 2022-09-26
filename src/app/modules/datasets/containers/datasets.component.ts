@@ -35,23 +35,25 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
   }
 
   onFileUploaded(file: File | null) {
-    console.log(file);
-
     if (file) {
       const dialogData: ICsvViewer = {
         file: file,
         delimiter: ',',
         header: true,
       };
-      this.matDialog.open(CsvViewerComponent, { data: dialogData });
-
-      DATASETS.push({ name: file.name });
-      this.dataSource = new MatTableDataSource(DATASETS);
-      this.snackBar.open('El dataset se subió correctamente', 'Aceptar', {
-        duration: 3000,
-        verticalPosition: 'top',
-        horizontalPosition: 'right',
+      this.matDialog.open(CsvViewerComponent, {
+        data: dialogData,
+        maxHeight: '90vh',
+        maxWidth: '90%',
       });
+
+      // DATASETS.push({ name: file.name });
+      // this.dataSource = new MatTableDataSource(DATASETS);
+      // this.snackBar.open('El dataset se subió correctamente', 'Aceptar', {
+      //   duration: 3000,
+      //   verticalPosition: 'top',
+      //   horizontalPosition: 'right',
+      // });
     }
   }
 }
