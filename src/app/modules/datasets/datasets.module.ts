@@ -5,17 +5,19 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { SharedModule } from '../../shared/shared.module';
 import { CsvViewerModule } from '../../shared/components/csv-viewer/csv-viewer.module';
-import { CommonModule } from '@angular/common';
+import { DatasetsRoutingModule } from './datasets-routing.module';
+import { DatasetDetailsModule } from './dataset-details/dataset-details.module';
 
 @NgModule({
   declarations: [DatasetsComponent],
   imports: [
-    CommonModule,
     SharedModule,
     FileUploaderModule,
     MatTableModule,
     MatSortModule,
     CsvViewerModule,
+    DatasetsRoutingModule,
+    DatasetDetailsModule,
   ],
 })
 export class DatasetsModule {}

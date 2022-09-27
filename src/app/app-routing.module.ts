@@ -11,7 +11,13 @@ import { NotFoundComponent } from './shared/components/not-found/containers/not-
 const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
   { path: 'welcome', component: WelcomeComponent },
-  { path: 'datasets', component: DatasetsComponent },
+  {
+    path: 'datasets',
+    loadChildren: () =>
+      import('./modules/datasets/datasets.module').then(
+        (m) => m.DatasetsModule,
+      ),
+  },
   { path: 'cleaning', component: CleaningComponent },
   { path: 'training', component: TrainingComponent },
   { path: 'classification', component: ClassificationComponent },
