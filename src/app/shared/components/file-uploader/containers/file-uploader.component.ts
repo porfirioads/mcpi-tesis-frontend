@@ -19,7 +19,7 @@ export class FileUploaderComponent implements OnInit {
   async onFilesChanged($event: Event): Promise<void> {
     const files = ($event.target as HTMLInputElement).files;
     this.uploading = true;
-    await Timer.delay(2);
+    await Timer.delay(1);
     this.fileUploaded.emit(files ? files[0] : null);
     this.uploading = false;
   }

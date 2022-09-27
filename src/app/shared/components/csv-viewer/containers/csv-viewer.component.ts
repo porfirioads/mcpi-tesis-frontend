@@ -5,8 +5,11 @@ import {
   Input,
   OnChanges,
   SimpleChanges,
+  ViewChild,
 } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgxCsvParser, NgxCSVParserError } from 'ngx-csv-parser';
 import { lastValueFrom } from 'rxjs';
@@ -18,9 +21,12 @@ import { ICsvViewer } from '../interfaces/csv-viewer.interface';
   styleUrls: ['./csv-viewer.component.scss'],
 })
 export class CsvViewerComponent implements AfterViewInit, OnChanges {
+  // @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
   @Input() file!: File;
   @Input() delimiter = ',';
   @Input() header = true;
+  @Input() pageSize = 10;
   displayedColumns!: string[];
   dataSource!: MatTableDataSource<any>;
   records: any[] = [];
@@ -64,7 +70,8 @@ export class CsvViewerComponent implements AfterViewInit, OnChanges {
     }
 
     this.records = result;
-    this.displayedColumns = ['Answer', 'Question', 'Sentiment'];
+    this.displayedColumns = Object.keys(this.records[0]);
     this.dataSource = new MatTableDataSource(this.records);
+    this.dataSource.paginator = this.paginator;
   }
 }

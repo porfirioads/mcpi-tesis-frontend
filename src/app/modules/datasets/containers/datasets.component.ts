@@ -43,7 +43,9 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
       };
       this.matDialog.open(CsvViewerComponent, {
         data: dialogData,
+        height: '90vh',
         maxHeight: '90vh',
+        width: '90%',
         maxWidth: '90%',
       });
 
