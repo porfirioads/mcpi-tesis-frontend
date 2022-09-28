@@ -16,7 +16,7 @@ export class DatasetsService {
       setTimeout(() => {
         observer.next(this.datasets);
         observer.complete();
-      }, 2000);
+      }, 1000);
     });
   }
 
@@ -29,7 +29,7 @@ export class DatasetsService {
         this.datasets.push(dataset);
         observer.next(dataset);
         observer.complete();
-      }, 2000);
+      }, 1000);
     });
   }
 
@@ -46,7 +46,7 @@ export class DatasetsService {
 
         observer.next(datasetToDelete);
         observer.complete();
-      }, 2000);
+      }, 1000);
     });
   }
 }

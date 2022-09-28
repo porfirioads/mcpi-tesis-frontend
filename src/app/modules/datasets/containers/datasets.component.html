@@ -23,13 +23,19 @@
         <td mat-cell *matCellDef="let element">
           <div fxLayout="row" fxLayoutGap="10px">
             <button
+              class="action-button"
               mat-mini-fab
               color="primary"
               matTooltip="Descargar el dataset"
             >
               <mat-icon>download</mat-icon>
             </button>
-            <button mat-mini-fab color="warn" matTooltip="Eliminar el dataset">
+            <button
+              class="action-button"
+              mat-mini-fab
+              color="warn"
+              matTooltip="Eliminar el dataset"
+            >
               <mat-icon>delete</mat-icon>
             </button>
           </div>
@@ -37,6 +43,11 @@
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="columns"></tr>
       <tr mat-row *matRowDef="let row; columns: columns"></tr>
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" [attr.colspan]="columns.length">
+          No se encontraron elementos.
+        </td>
+      </tr>
     </table>
   </ng-container>
 
