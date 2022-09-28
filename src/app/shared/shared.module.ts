@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { PageTitleModule } from './components/page-title/page-title.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   exports: [
@@ -17,6 +18,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     MatSnackBarModule,
     MatDialogModule,
+    MatCardModule,
     PageTitleModule,
   ],
 })

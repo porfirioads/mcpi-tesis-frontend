@@ -9,7 +9,15 @@
     </ng-container>
   </app-page-title>
 
-  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <ng-container *ngIf="dataSource; else emptyTableSkeleton">
+    Aquí cargará la tabla.
+  </ng-container>
+
+  <ng-template #emptyTableSkeleton>
+    <app-empty-table-skeleton></app-empty-table-skeleton>
+  </ng-template>
+
+  <!-- <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
     <ng-container matColumnDef="name">
       <th
         mat-header-cell
@@ -43,5 +51,5 @@
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
+  </table> -->
 </div>

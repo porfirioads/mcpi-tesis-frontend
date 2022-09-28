@@ -7,6 +7,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { CsvViewerModule } from '../../shared/components/csv-viewer/csv-viewer.module';
 import { DatasetsRoutingModule } from './datasets-routing.module';
 import { DatasetDetailsModule } from './dataset-details/dataset-details.module';
+import { SkeletonModule } from '../../shared/components/skeleton/skeleton.module';
 
 @NgModule({
   declarations: [DatasetsComponent],
@@ -18,6 +19,7 @@ import { DatasetDetailsModule } from './dataset-details/dataset-details.module';
     CsvViewerModule,
     DatasetsRoutingModule,
     DatasetDetailsModule,
+    SkeletonModule,
   ],
 })
 export class DatasetsModule {}
