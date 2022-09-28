@@ -8,6 +8,7 @@ import { PageTitleModule } from './components/page-title/page-title.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   exports: [
@@ -19,6 +20,7 @@ import { MatCardModule } from '@angular/material/card';
     MatSnackBarModule,
     MatDialogModule,
     MatCardModule,
+    MatTooltipModule,
     PageTitleModule,
   ],
 })

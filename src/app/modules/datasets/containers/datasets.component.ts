@@ -13,6 +13,7 @@ import { lastValueFrom } from 'rxjs';
 })
 export class DatasetsComponent implements OnInit, AfterViewInit {
   dataSource?: MatTableDataSource<IDataset>;
+  columns = ['fileName', 'actions'];
 
   constructor(
     private snackBar: MatSnackBar,
@@ -29,6 +30,7 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
   async loadDatasets() {
     const datasets = await lastValueFrom(this.datasetsService.getDatasets());
     this.dataSource = new MatTableDataSource(datasets);
+    console.log(datasets);
   }
 
   async onFileUploaded(file: File | null) {
