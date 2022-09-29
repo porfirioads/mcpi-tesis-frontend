@@ -7,9 +7,7 @@ import {
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { DatasetsService } from '../../../services/datasets.service';
-import { IDataset } from '../../../shared/interfaces/dataset.interface';
 import { lastValueFrom } from 'rxjs';
-import { NotFoundComponent } from '../../../shared/components/not-found/containers/not-found.component';
 import { LoadingComponent } from '../../../shared/components/loading/containers/loading.component';
 import { Router } from '@angular/router';
 
@@ -20,7 +18,7 @@ import { Router } from '@angular/router';
 })
 export class DatasetsComponent implements OnInit, AfterViewInit {
   private loadingDialog?: MatDialogRef<LoadingComponent>;
-  dataSource?: MatTableDataSource<IDataset>;
+  dataSource?: MatTableDataSource<string>;
   columns = ['fileName', 'actions'];
 
   constructor(

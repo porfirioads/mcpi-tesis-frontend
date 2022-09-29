@@ -14,21 +14,21 @@
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
       <ng-container matColumnDef="fileName">
         <th mat-header-cell *matHeaderCellDef>Archivo</th>
-        <td mat-cell *matCellDef="let element">
-          <pre>{{ element.fileName }}</pre>
+        <td mat-cell *matCellDef="let fileName">
+          <pre>{{ fileName }}</pre>
         </td>
       </ng-container>
 
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef>Acciones</th>
-        <td mat-cell *matCellDef="let element">
+        <td mat-cell *matCellDef="let fileName">
           <div fxLayout="row" fxLayoutGap="10px">
             <button
               class="action-button"
               mat-mini-fab
               color="primary"
               matTooltip="Vista previa"
-              (click)="openDataset(element.fileName)"
+              (click)="openDataset(fileName)"
             >
               <mat-icon>visibility</mat-icon>
             </button>
@@ -37,7 +37,7 @@
               mat-mini-fab
               color="primary"
               matTooltip="Descargar"
-              (click)="downloadDataset(element.fileName)"
+              (click)="downloadDataset(fileName)"
             >
               <mat-icon>download</mat-icon>
             </button>
@@ -46,7 +46,7 @@
               mat-mini-fab
               color="warn"
               matTooltip="Eliminar"
-              (click)="deleteDataset(element.fileName)"
+              (click)="deleteDataset(fileName)"
             >
               <mat-icon>delete</mat-icon>
             </button>
@@ -57,7 +57,7 @@
       <tr mat-row *matRowDef="let row; columns: columns"></tr>
       <tr class="mat-row" *matNoDataRow>
         <td class="mat-cell" [attr.colspan]="columns.length">
-          No se encontraron elementos.
+          No se encontraron fileNameos.
         </td>
       </tr>
     </table>

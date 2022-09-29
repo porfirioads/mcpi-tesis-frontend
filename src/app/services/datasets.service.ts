@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IDataset } from '../shared/interfaces/dataset.interface';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -9,15 +11,17 @@ export class DatasetsService {
   // TODO: Remove this line when connect app with backend.
   datasets: IDataset[] = [];
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  getDatasets(): Observable<IDataset[]> {
-    return new Observable((observer) => {
-      setTimeout(() => {
-        observer.next(this.datasets);
-        observer.complete();
-      }, 1000);
-    });
+  getDatasets(): Observable<string[]> {
+    const url = `${environment.backend.uri}/datasets`;
+    return this.http.get<string[]>(url);
+    // return new Observable((observer) => {
+    //   setTimeout(() => {
+    //     observer.next(this.datasets);
+    //     observer.complete();
+    //   }, 1000);
+    // });
   }
 
   uploadDataset(file: File): Observable<IDataset> {

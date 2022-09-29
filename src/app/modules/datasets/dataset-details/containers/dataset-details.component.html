@@ -1,9 +1,34 @@
-<app-page-title title="Previsualización de dataset" goBackUrl="/datasets">
-  <!-- <ng-container buttons>
-    <app-file-uploader
-      [label]="'Subir dataset'"
-      [accept]="'text/csv'"
-      (fileUploaded)="onFileUploaded($event)"
-    ></app-file-uploader>
-  </ng-container> -->
-</app-page-title>
+<div fxFill fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="20px">
+  <app-page-title title="Previsualización de dataset" goBackUrl="/datasets">
+  </app-page-title>
+
+  <mat-card>
+    <mat-card-content>
+      <div fxLayout="row wrap" fxLayoutGap="20px">
+        <div>
+          <strong>Nombre del archivo</strong>
+          <br />
+          <span>{{ id }}</span>
+        </div>
+
+        <div>
+          <strong>Número de filas</strong>
+          <br />
+          <span>{{ 100 }}</span>
+        </div>
+
+        <div>
+          <strong>Número de columnas</strong>
+          <br />
+          <span>{{ 12 }}</span>
+        </div>
+
+        <div>
+          <strong>Tamaño</strong>
+          <br />
+          <span>{{ '10MB' }}</span>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
