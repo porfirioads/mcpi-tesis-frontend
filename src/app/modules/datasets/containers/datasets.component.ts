@@ -1,5 +1,9 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogRef,
+  MatDialogState,
+} from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { DatasetsService } from '../../../services/datasets.service';
@@ -31,9 +35,10 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
   }
 
   async loadDatasets() {
+    this.showLoading();
     const datasets = await lastValueFrom(this.datasetsService.getDatasets());
     this.dataSource = new MatTableDataSource(datasets);
-    console.log(datasets);
+    this.hideLoading();
   }
 
   async onFileUploaded(file: File | null) {
@@ -44,8 +49,6 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
     await lastValueFrom(this.datasetsService.uploadDataset(file));
 
     await this.loadDatasets();
-
-    this.loadingDialog?.close();
 
     // if (file) {
     //   const dialogData: ICsvViewer = {
@@ -72,8 +75,18 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
   }
 
   async onFileUploading(_file: File | null) {
-    this.loadingDialog = this.matDialog.open(LoadingComponent, {
-      disableClose: true,
-    });
+    this.showLoading();
+  }
+
+  showLoading() {
+    if (this.loadingDialog?.getState() !== MatDialogState.OPEN) {
+      this.loadingDialog = this.matDialog.open(LoadingComponent, {
+        disableClose: true,
+      });
+    }
+  }
+
+  hideLoading() {
+    this.loadingDialog?.close();
   }
 }
