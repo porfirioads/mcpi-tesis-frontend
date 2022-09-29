@@ -1,10 +1,12 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { DatasetsService } from '../../../services/datasets.service';
 import { IDataset } from '../../../shared/interfaces/dataset.interface';
 import { lastValueFrom } from 'rxjs';
+import { NotFoundComponent } from '../../../shared/components/not-found/containers/not-found.component';
+import { LoadingComponent } from '../../../shared/components/loading/containers/loading.component';
 
 @Component({
   selector: 'app-datasets',
@@ -12,6 +14,7 @@ import { lastValueFrom } from 'rxjs';
   styleUrls: ['./datasets.component.scss'],
 })
 export class DatasetsComponent implements OnInit, AfterViewInit {
+  private loadingDialog?: MatDialogRef<LoadingComponent>;
   dataSource?: MatTableDataSource<IDataset>;
   columns = ['fileName', 'actions'];
 
@@ -42,6 +45,8 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
 
     await this.loadDatasets();
 
+    this.loadingDialog?.close();
+
     // if (file) {
     //   const dialogData: ICsvViewer = {
     //     file: file,
@@ -64,5 +69,11 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
     //   //   horizontalPosition: 'right',
     //   // });
     // }
+  }
+
+  async onFileUploading(_file: File | null) {
+    this.loadingDialog = this.matDialog.open(LoadingComponent, {
+      disableClose: true,
+    });
   }
 }

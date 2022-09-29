@@ -5,6 +5,7 @@
         [label]="'Subir dataset'"
         [accept]="'text/csv'"
         (fileUploaded)="onFileUploaded($event)"
+        (fileUploading)="onFileUploading($event)"
       ></app-file-uploader>
     </ng-container>
   </app-page-title>
