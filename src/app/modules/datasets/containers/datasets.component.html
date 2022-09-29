@@ -10,7 +10,7 @@
     </ng-container>
   </app-page-title>
 
-  <ng-container *ngIf="dataSource; else emptyTableSkeleton">
+  <ng-container *ngIf="dataSource">
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
       <ng-container matColumnDef="fileName">
         <th mat-header-cell *matHeaderCellDef>Archivo</th>
@@ -27,7 +27,17 @@
               class="action-button"
               mat-mini-fab
               color="primary"
-              matTooltip="Descargar el dataset"
+              matTooltip="Vista previa"
+              (click)="openDataset(element.fileName)"
+            >
+              <mat-icon>visibility</mat-icon>
+            </button>
+            <button
+              class="action-button"
+              mat-mini-fab
+              color="primary"
+              matTooltip="Descargar"
+              (click)="downloadDataset(element.fileName)"
             >
               <mat-icon>download</mat-icon>
             </button>
@@ -35,7 +45,8 @@
               class="action-button"
               mat-mini-fab
               color="warn"
-              matTooltip="Eliminar el dataset"
+              matTooltip="Eliminar"
+              (click)="deleteDataset(element.fileName)"
             >
               <mat-icon>delete</mat-icon>
             </button>
@@ -51,8 +62,4 @@
       </tr>
     </table>
   </ng-container>
-
-  <ng-template #emptyTableSkeleton>
-    <app-empty-table-skeleton></app-empty-table-skeleton>
-  </ng-template>
 </div>

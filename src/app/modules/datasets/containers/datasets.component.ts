@@ -11,6 +11,7 @@ import { IDataset } from '../../../shared/interfaces/dataset.interface';
 import { lastValueFrom } from 'rxjs';
 import { NotFoundComponent } from '../../../shared/components/not-found/containers/not-found.component';
 import { LoadingComponent } from '../../../shared/components/loading/containers/loading.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-datasets',
@@ -26,6 +27,7 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
     private snackBar: MatSnackBar,
     private matDialog: MatDialog,
     private datasetsService: DatasetsService,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {}
@@ -76,6 +78,18 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
 
   async onFileUploading(_file: File | null) {
     this.showLoading();
+  }
+
+  deleteDataset(fileName: string) {
+    throw new Error('Method not implemented.');
+  }
+
+  downloadDataset(fileName: string) {
+    throw new Error('Method not implemented.');
+  }
+
+  openDataset(fileName: string) {
+    this.router.navigate([`/datasets/details/${fileName}`]);
   }
 
   showLoading() {
