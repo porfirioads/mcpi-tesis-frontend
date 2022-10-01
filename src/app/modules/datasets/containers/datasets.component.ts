@@ -10,6 +10,7 @@ import { DatasetsService } from '../../../services/datasets.service';
 import { lastValueFrom } from 'rxjs';
 import { LoadingComponent } from '../../../shared/components/loading/containers/loading.component';
 import { Router } from '@angular/router';
+import { NotificationService } from '../../../services/notification.service';
 
 @Component({
   selector: 'app-datasets',
@@ -22,10 +23,10 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
   columns = ['fileName', 'actions'];
 
   constructor(
-    private snackBar: MatSnackBar,
     private matDialog: MatDialog,
     private datasetsService: DatasetsService,
     private router: Router,
+    private notificationService: NotificationService,
   ) {}
 
   ngOnInit(): void {}
@@ -36,9 +37,29 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
 
   async loadDatasets() {
     this.showLoading();
-    const datasets = await lastValueFrom(this.datasetsService.getDatasets());
-    this.dataSource = new MatTableDataSource(datasets);
+
+    try {
+      const datasets = await lastValueFrom(this.datasetsService.getDatasets());
+      this.dataSource = new MatTableDataSource(datasets);
+    } catch (err) {}
+
     this.hideLoading();
+
+    await lastValueFrom(
+      this.notificationService.info('Info').afterDismissed(),
+    );
+
+    await lastValueFrom(
+      this.notificationService.success('Success').afterDismissed(),
+    );
+
+    await lastValueFrom(
+      this.notificationService.warning('Warning').afterDismissed(),
+    );
+
+    await lastValueFrom(
+      this.notificationService.error('Error').afterDismissed(),
+    );
   }
 
   async onFileUploaded(file: File | null) {

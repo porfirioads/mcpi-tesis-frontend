@@ -16,12 +16,6 @@ export class DatasetsService {
   getDatasets(): Observable<string[]> {
     const url = `${environment.backend.uri}/datasets`;
     return this.http.get<string[]>(url);
-    // return new Observable((observer) => {
-    //   setTimeout(() => {
-    //     observer.next(this.datasets);
-    //     observer.complete();
-    //   }, 1000);
-    // });
   }
 
   uploadDataset(file: File): Observable<IDataset> {
