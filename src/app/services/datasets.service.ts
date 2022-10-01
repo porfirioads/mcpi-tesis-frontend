@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IDataset } from '../shared/interfaces/dataset.interface';
+import {
+  IDataset,
+  IDatasetInput,
+} from '../shared/interfaces/dataset.interface';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -18,28 +21,24 @@ export class DatasetsService {
     return this.http.get<string[]>(url);
   }
 
-  uploadDataset(file: File): Observable<IDataset> {
-    const dataset: IDataset = {
-      fileName: file.name,
-    };
-    return new Observable((observer) => {
-      setTimeout(() => {
-        this.datasets.push(dataset);
-        observer.next(dataset);
-        observer.complete();
-      }, 1000);
-    });
+  uploadDataset(data: IDatasetInput): Observable<IDataset> {
+    const url = `${environment.backend.uri}/datasets/upload`;
+    const formData = new FormData();
+    formData.append('file', data.file);
+    formData.append('encoding', data.encoding);
+    formData.append('delimiter', data.delimiter);
+    return this.http.post<IDataset>(url, formData);
   }
 
   deleteDataset(fileName: string): Observable<IDataset> {
     return new Observable((observer) => {
       setTimeout(() => {
         const datasetToDelete = this.datasets.find(
-          (dataset) => dataset.fileName === fileName,
+          (dataset) => fileName === fileName,
         );
 
         this.datasets = this.datasets.filter(
-          (dataset) => dataset.fileName !== fileName,
+          (dataset) => fileName !== fileName,
         );
 
         observer.next(datasetToDelete);

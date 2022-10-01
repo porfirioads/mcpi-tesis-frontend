@@ -1,3 +1,12 @@
 export interface IDataset {
-  fileName: string;
+  row_count: number;
+  col_count: number;
+  columns: string[];
+  samples: any;
+}
+
+export interface IDatasetInput {
+  file: File;
+  encoding: string;
+  delimiter: string;
 }

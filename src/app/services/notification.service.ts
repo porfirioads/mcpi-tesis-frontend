@@ -22,7 +22,7 @@ export class NotificationService {
     alertType: AlertType,
   ): MatSnackBarRef<TextOnlySnackBar> {
     return this.snackBar.open(message, undefined, {
-      verticalPosition: 'top',
+      verticalPosition: 'bottom',
       horizontalPosition: 'center',
       panelClass: alertType,
       duration: 3000,

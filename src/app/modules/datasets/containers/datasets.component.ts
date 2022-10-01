@@ -41,25 +41,13 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
     try {
       const datasets = await lastValueFrom(this.datasetsService.getDatasets());
       this.dataSource = new MatTableDataSource(datasets);
-    } catch (err) {}
+    } catch (err) {
+      this.notificationService.error(
+        'No se pudieron cargar los datasets, intente más tarde.',
+      );
+    }
 
     this.hideLoading();
-
-    await lastValueFrom(
-      this.notificationService.info('Info').afterDismissed(),
-    );
-
-    await lastValueFrom(
-      this.notificationService.success('Success').afterDismissed(),
-    );
-
-    await lastValueFrom(
-      this.notificationService.warning('Warning').afterDismissed(),
-    );
-
-    await lastValueFrom(
-      this.notificationService.error('Error').afterDismissed(),
-    );
   }
 
   async onFileUploaded(file: File | null) {
@@ -67,32 +55,24 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
       return;
     }
 
-    await lastValueFrom(this.datasetsService.uploadDataset(file));
+    try {
+      await lastValueFrom(
+        this.datasetsService.uploadDataset({
+          file: file,
+          delimiter: ',',
+          encoding: 'latin-1',
+        }),
+      );
+
+      this.notificationService.success('Dataset subido con éxito');
+    } catch (err) {
+      this.notificationService.error(
+        'No se pudo subir el dataset, intente más tarde.',
+      );
+      console.log(err);
+    }
 
     await this.loadDatasets();
-
-    // if (file) {
-    //   const dialogData: ICsvViewer = {
-    //     file: file,
-    //     delimiter: ',',
-    //     header: true,
-    //   };
-    //   this.matDialog.open(CsvViewerComponent, {
-    //     data: dialogData,
-    //     height: '90vh',
-    //     maxHeight: '90vh',
-    //     width: '90%',
-    //     maxWidth: '90%',
-    //   });
-
-    //   // DATASETS.push({ name: file.name });
-    //   // this.dataSource = new MatTableDataSource(DATASETS);
-    //   // this.snackBar.open('El dataset se subió correctamente', 'Aceptar', {
-    //   //   duration: 3000,
-    //   //   verticalPosition: 'top',
-    //   //   horizontalPosition: 'right',
-    //   // });
-    // }
   }
 
   async onFileUploading(_file: File | null) {
