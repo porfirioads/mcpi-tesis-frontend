@@ -4,7 +4,6 @@ import {
   MatDialogRef,
   MatDialogState,
 } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { DatasetsService } from '../../../services/datasets.service';
 import { lastValueFrom } from 'rxjs';
@@ -64,7 +63,7 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
         }),
       );
 
-      this.notificationService.success('Dataset subido con éxito');
+      this.notificationService.info('Dataset subido con éxito');
     } catch (err) {
       this.notificationService.error(
         'No se pudo subir el dataset, intente más tarde.',

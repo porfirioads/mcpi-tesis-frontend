@@ -14,15 +14,19 @@
         <div>
           <strong>Número de filas</strong>
           <br />
-          <span>{{ 100 }}</span>
+          <span>{{ dataset?.row_count }}</span>
         </div>
 
         <div>
           <strong>Número de columnas</strong>
           <br />
-          <span>{{ 12 }}</span>
+          <span>{{ dataset?.col_count }}</span>
         </div>
       </div>
     </mat-card-content>
   </mat-card>
+
+  <pre>
+    {{ dataset | json }}
+  </pre>
 </div>

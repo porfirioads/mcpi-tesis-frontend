@@ -21,6 +21,11 @@ export class DatasetsService {
     return this.http.get<string[]>(url);
   }
 
+  getDataset(fileName: string): Observable<IDataset> {
+    const url = `${environment.backend.uri}/datasets/${fileName}`;
+    return this.http.get<IDataset>(url);
+  }
+
   uploadDataset(data: IDatasetInput): Observable<IDataset> {
     const url = `${environment.backend.uri}/datasets/upload`;
     const formData = new FormData();
