@@ -82,8 +82,21 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
     throw new Error('Method not implemented.');
   }
 
-  downloadDataset(fileName: string) {
-    throw new Error('Method not implemented.');
+  async downloadDataset(fileName: string) {
+    try {
+      const blob = await lastValueFrom(
+        this.datasetsService.downloadDataset(fileName),
+      );
+      const anchor = document.createElement('a');
+      anchor.download = fileName;
+      anchor.href = (window.webkitURL || window.URL).createObjectURL(blob);
+      anchor.click();
+    } catch (err) {
+      this.notificationService.error(
+        'No se pudo descargar el dataset, intente más tarde.',
+      );
+      console.log(err);
+    }
   }
 
   openDataset(fileName: string) {

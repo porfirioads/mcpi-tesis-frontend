@@ -22,7 +22,7 @@ export class DatasetsService {
   }
 
   getDataset(fileName: string): Observable<IDataset> {
-    const url = `${environment.backend.uri}/datasets/${fileName}`;
+    const url = `${environment.backend.uri}/datasets/details/${fileName}`;
     return this.http.get<IDataset>(url);
   }
 
@@ -33,6 +33,12 @@ export class DatasetsService {
     formData.append('encoding', data.encoding);
     formData.append('delimiter', data.delimiter);
     return this.http.post<IDataset>(url, formData);
+  }
+
+  downloadDataset(fileName: string): Observable<Blob> {
+    const url = `${environment.backend.uri}/datasets/download`;
+    const params = { file_path: fileName };
+    return this.http.get(url, { responseType: 'blob', params });
   }
 
   deleteDataset(fileName: string): Observable<IDataset> {
