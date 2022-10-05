@@ -4,7 +4,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import { PageTitleModule } from './components/page-title/page-title.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
@@ -15,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
   exports: [
     CommonModule,
     RouterModule,
+    HttpClientModule,
     FlexLayoutModule,
     MatButtonModule,
     MatIconModule,
@@ -22,8 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
     MatDialogModule,
     MatCardModule,
     MatTooltipModule,
-    PageTitleModule,
-    HttpClientModule,
   ],
 })
 export class SharedModule {}

@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { DatasetDetailsComponent } from './containers/dataset-details.component';
 import { SharedModule } from '../../../shared/shared.module';
+import { PageTitleModule } from '../../../shared/components/page-title/page-title.module';
 
 @NgModule({
   declarations: [DatasetDetailsComponent],
-  imports: [SharedModule],
+  imports: [SharedModule, PageTitleModule],
 })
 export class DatasetDetailsModule {}

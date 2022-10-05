@@ -9,6 +9,7 @@ import { DatasetsRoutingModule } from './datasets-routing.module';
 import { DatasetDetailsModule } from './dataset-details/dataset-details.module';
 import { SkeletonModule } from '../../shared/components/skeleton/skeleton.module';
 import { LoadingModule } from '../../shared/components/loading/loading.module';
+import { PageTitleModule } from '../../shared/components/page-title/page-title.module';
 
 @NgModule({
   declarations: [DatasetsComponent],
@@ -22,6 +23,7 @@ import { LoadingModule } from '../../shared/components/loading/loading.module';
     DatasetDetailsModule,
     SkeletonModule,
     LoadingModule,
+    PageTitleModule,
   ],
 })
 export class DatasetsModule {}
