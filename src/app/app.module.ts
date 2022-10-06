@@ -10,6 +10,7 @@ import { CleaningModule } from './modules/cleaning/cleaning.module';
 import { TrainingModule } from './modules/training/training.module';
 import { ClassificationModule } from './modules/classification/classification.module';
 import { VisualizationModule } from './modules/visualization/visualization.module';
+import { NotFoundModule } from './shared/components/not-found/not-found.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import { VisualizationModule } from './modules/visualization/visualization.modul
     TrainingModule,
     ClassificationModule,
     VisualizationModule,
+    NotFoundModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
