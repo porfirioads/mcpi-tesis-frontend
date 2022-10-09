@@ -4,3 +4,24 @@
   text-overflow: ellipsis;
   max-width: 600px;
 }
+
+table {
+  overflow-x: auto;
+  width: 100%;
+}
+
+tr > th:not(:first-child) {
+  padding-left: 10px !important;
+}
+
+tr > th:not(:last-child) {
+  padding-right: 10px !important;
+}
+
+tr > td:not(:first-child) {
+  padding-left: 10px !important;
+}
+
+tr > td:not(:last-child) {
+  padding-right: 10px !important;
+}

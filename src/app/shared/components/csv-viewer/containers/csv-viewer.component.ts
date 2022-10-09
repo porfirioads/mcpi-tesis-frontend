@@ -1,17 +1,16 @@
 import {
   AfterViewInit,
   Component,
-  Inject,
   Input,
   OnChanges,
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgxCsvParser, NgxCSVParserError } from 'ngx-csv-parser';
 import { lastValueFrom } from 'rxjs';
+
 @Component({
   selector: 'app-csv-viewer',
   templateUrl: './csv-viewer.component.html',
