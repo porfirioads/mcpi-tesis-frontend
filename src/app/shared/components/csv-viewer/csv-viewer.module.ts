@@ -6,6 +6,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxCsvParserModule } from 'ngx-csv-parser';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [CsvViewerComponent],
@@ -15,6 +16,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatPaginatorModule,
     NgxCsvParserModule,
     FlexLayoutModule,
+    MatTooltipModule,
   ],
   exports: [CsvViewerComponent],
 })
