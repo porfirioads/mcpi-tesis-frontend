@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+
+<mat-dialog-content class="pre-line">
+  {{ data.message }}
+</mat-dialog-content>
+
+<mat-dialog-actions fxLayout="row" fxLayoutAlign="end center">
+  <button
+    *ngFor="let button of data.buttons"
+    mat-button
+    (click)="button.action()"
+    [color]="button.color"
+    mat-dialog-close
+    [class.mat-stroked-button]="button.type === 'mat-stroked-button'"
+    [class.mat-raised-button]="button.type === 'mat-raised-button'"
+  >
+    {{ button.text }}
+  </button>
+</mat-dialog-actions>

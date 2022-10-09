@@ -10,6 +10,7 @@ import { lastValueFrom } from 'rxjs';
 import { LoadingComponent } from '../../../shared/components/loading/containers/loading.component';
 import { Router } from '@angular/router';
 import { NotificationService } from '../../../services/notification.service';
+import { ConfirmDialogService } from '@src/app/shared/components/confirm-dialog/services/confirm-dialog.service';
 
 @Component({
   selector: 'app-datasets',
@@ -26,6 +27,7 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
     private datasetsService: DatasetsService,
     private router: Router,
     private notificationService: NotificationService,
+    private confirmDialogService: ConfirmDialogService,
   ) {}
 
   ngOnInit(): void {}
@@ -78,8 +80,31 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
     this.showLoading();
   }
 
-  deleteDataset(fileName: string) {
-    throw new Error('Method not implemented.');
+  confirmDeleteDataset(fileName: string) {
+    this.confirmDialogService.show(
+      'Eliminar dataset',
+      '¿Estás seguro que deseas eliminar el dataset?\n\nEsta acción no se puede deshacer',
+      [
+        {
+          color: 'primary',
+          text: 'Cancelar',
+          type: 'mat-stroked-button',
+          action: () => {},
+        },
+        {
+          color: 'primary',
+          text: 'Eliminar',
+          type: 'mat-raised-button',
+          action: () => {
+            this.deleteDataset(fileName);
+          },
+        },
+      ],
+    );
+  }
+
+  private deleteDataset(fileName: string) {
+    console.log('Eliminando dataset', fileName);
   }
 
   async downloadDataset(fileName: string) {

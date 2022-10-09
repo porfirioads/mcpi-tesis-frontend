@@ -10,6 +10,7 @@ import { DatasetDetailsModule } from './dataset-details/dataset-details.module';
 import { SkeletonModule } from '../../shared/components/skeleton/skeleton.module';
 import { LoadingModule } from '../../shared/components/loading/loading.module';
 import { PageTitleModule } from '../../shared/components/page-title/page-title.module';
+import { ConfirmDialogModule } from '@src/app/shared/components/confirm-dialog/confirm-dialog.module';
 
 @NgModule({
   declarations: [DatasetsComponent],
@@ -24,6 +25,7 @@ import { PageTitleModule } from '../../shared/components/page-title/page-title.m
     SkeletonModule,
     LoadingModule,
     PageTitleModule,
+    ConfirmDialogModule,
   ],
 })
 export class DatasetsModule {}
