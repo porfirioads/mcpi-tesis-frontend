@@ -12,15 +12,12 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgxCsvParser, NgxCSVParserError } from 'ngx-csv-parser';
 import { lastValueFrom } from 'rxjs';
-import { ICsvViewer } from '../interfaces/csv-viewer.interface';
-
 @Component({
   selector: 'app-csv-viewer',
   templateUrl: './csv-viewer.component.html',
   styleUrls: ['./csv-viewer.component.scss'],
 })
 export class CsvViewerComponent implements AfterViewInit, OnChanges {
-  // @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @Input() file!: File;
   @Input() delimiter = ',';
@@ -30,14 +27,7 @@ export class CsvViewerComponent implements AfterViewInit, OnChanges {
   dataSource!: MatTableDataSource<any>;
   records: any[] = [];
 
-  constructor(
-    private ngxCsvParser: NgxCsvParser,
-    @Inject(MAT_DIALOG_DATA) public data: ICsvViewer,
-  ) {
-    this.file = data.file;
-    this.delimiter = data.delimiter ?? this.delimiter;
-    this.header = data.header ?? this.header;
-  }
+  constructor(private ngxCsvParser: NgxCsvParser) {}
 
   ngAfterViewInit(): void {
     console.log('CsvViewerComponent.ngAfterViewInit()');

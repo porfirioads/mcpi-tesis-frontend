@@ -12,6 +12,7 @@ import { lastValueFrom } from 'rxjs';
 export class DatasetDetailsComponent implements OnInit {
   id!: string;
   dataset?: IDataset;
+  datasetFile?: File;
 
   constructor(
     private route: ActivatedRoute,
@@ -27,5 +28,11 @@ export class DatasetDetailsComponent implements OnInit {
     this.dataset = await lastValueFrom(
       this.datasetsService.getDataset(this.id),
     );
+
+    const blob = await lastValueFrom(
+      this.datasetsService.downloadDataset(this.id),
+    );
+
+    this.datasetFile = new File([blob], this.id, { type: blob.type });
   }
 }

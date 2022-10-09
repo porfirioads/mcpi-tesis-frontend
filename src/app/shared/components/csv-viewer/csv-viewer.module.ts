@@ -5,15 +5,16 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxCsvParserModule } from 'ngx-csv-parser';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [CsvViewerComponent],
   imports: [
     CommonModule,
     MatTableModule,
-    // MatSortModule,
     MatPaginatorModule,
     NgxCsvParserModule,
+    FlexLayoutModule,
   ],
   exports: [CsvViewerComponent],
 })

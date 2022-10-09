@@ -1,18 +1,26 @@
-<h2 mat-dialog-title>Vista previa del archivo</h2>
+<div fxFlex fxLayout="column">
+  <table fxFlex mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container
+      *ngFor="let column of displayedColumns"
+      [matColumnDef]="column"
+    >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ column }}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <div class="truncated-text">{{ element[column] }}</div>
+      </td>
+    </ng-container>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>
-      {{ column }}
-    </th>
-    <td mat-cell *matCellDef="let element">
-      <div class="truncated-text">{{ element[column] }}</div>
-    </td>
-  </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
-
-<mat-paginator #paginator [pageSize]="pageSize" showFirstLastButtons>
-</mat-paginator>
+  <mat-paginator
+    #paginator
+    [pageSize]="pageSize"
+    showFirstLastButtons
+    class="mat-elevation-z8"
+  >
+  </mat-paginator>
+</div>

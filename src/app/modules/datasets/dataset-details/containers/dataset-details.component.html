@@ -26,7 +26,9 @@
     </mat-card-content>
   </mat-card>
 
-  <pre>
-    {{ dataset | json }}
-  </pre>
+  <app-csv-viewer
+    fxFlex
+    *ngIf="datasetFile"
+    [file]="datasetFile"
+  ></app-csv-viewer>
 </div>
