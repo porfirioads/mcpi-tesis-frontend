@@ -2,7 +2,7 @@
   <app-page-title title="Previsualización de dataset" goBackUrl="/datasets">
   </app-page-title>
 
-  <mat-card>
+  <!-- <mat-card>
     <mat-card-content>
       <div fxLayout="row wrap" fxLayoutGap="20px">
         <div>
@@ -24,11 +24,45 @@
         </div>
       </div>
     </mat-card-content>
-  </mat-card>
+  </mat-card> -->
+
+  <div>
+    <mat-button-toggle-group [(value)]="viewMode">
+      <mat-button-toggle value="table">Tabla</mat-button-toggle>
+      <mat-button-toggle value="chart">Gráfica</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
 
   <app-csv-viewer
     fxFlex
-    *ngIf="datasetFile"
+    *ngIf="datasetFile && viewMode === 'table'"
     [file]="datasetFile"
   ></app-csv-viewer>
+
+  <app-line-chart
+    fxFlex
+    *ngIf="datasetFile && viewMode === 'chart'"
+    [data]="data"
+    [xAxisLabel]="'Country'"
+    [yAxisLabel]="'Population'"
+  >
+  </app-line-chart>
+
+  <app-line-chart
+    fxFlex
+    *ngIf="datasetFile && viewMode === 'chart'"
+    [data]="data"
+    [xAxisLabel]="'Country'"
+    [yAxisLabel]="'Population'"
+  >
+  </app-line-chart>
+
+  <app-line-chart
+    fxFlex
+    *ngIf="datasetFile && viewMode === 'chart'"
+    [data]="data"
+    [xAxisLabel]="'Country'"
+    [yAxisLabel]="'Population'"
+  >
+  </app-line-chart>
 </div>

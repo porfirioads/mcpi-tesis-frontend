@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DatasetsService } from '@src/app/services/datasets.service';
 import { IDataset } from '../../../../shared/interfaces/dataset.interface';
 import { lastValueFrom } from 'rxjs';
+import { ISingleChartItem } from '@src/app/shared/components/charts/interfaces/single-chart-item.interface';
 
 @Component({
   selector: 'app-dataset-details',
@@ -13,6 +14,22 @@ export class DatasetDetailsComponent implements OnInit {
   id!: string;
   dataset?: IDataset;
   datasetFile?: File;
+  viewMode = 'chart';
+
+  data: ISingleChartItem[] = [
+    {
+      name: 'Germany',
+      value: 8940000,
+    },
+    {
+      name: 'USA',
+      value: 5000000,
+    },
+    {
+      name: 'France',
+      value: 7200000,
+    },
+  ];
 
   constructor(
     private route: ActivatedRoute,

@@ -1,17 +1,3 @@
-.truncated-text {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 500px;
-  // max-width: 600px;
-  // max-width: 100vw;
-}
-
-table {
-  overflow-x: auto;
-  width: 100%;
-}
-
 tr > th:not(:first-child) {
   padding-left: 10px !important;
 }
@@ -26,4 +12,15 @@ tr > td:not(:first-child) {
 
 tr > td:not(:last-child) {
   padding-right: 10px !important;
+}
+
+.truncated-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 500px;
+}
+
+.table-container {
+  overflow: auto;
 }

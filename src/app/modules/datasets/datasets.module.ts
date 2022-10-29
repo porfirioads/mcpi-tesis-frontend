@@ -11,6 +11,7 @@ import { SkeletonModule } from '../../shared/components/skeleton/skeleton.module
 import { LoadingModule } from '../../shared/components/loading/loading.module';
 import { PageTitleModule } from '../../shared/components/page-title/page-title.module';
 import { ConfirmDialogModule } from '@src/app/shared/components/confirm-dialog/confirm-dialog.module';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [DatasetsComponent],
@@ -26,6 +27,7 @@ import { ConfirmDialogModule } from '@src/app/shared/components/confirm-dialog/c
     LoadingModule,
     PageTitleModule,
     ConfirmDialogModule,
+    MatTabsModule,
   ],
 })
 export class DatasetsModule {}
