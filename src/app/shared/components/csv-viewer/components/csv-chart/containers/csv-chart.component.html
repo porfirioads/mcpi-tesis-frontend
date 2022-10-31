@@ -1,0 +1,18 @@
+<div fxLayout="row wrap" fxLayoutGap="20px grid">
+  <div fxFlex="33" *ngFor="let column of chartsData | keyvalue; let i = index">
+    <mat-card fxFlex fxLayout="column">
+      <mat-card-content>
+        <div fxFlex>
+          <h2>Columna {{ i + 1 }} de {{ (chartsData | keyvalue).length }}</h2>
+          <h3>{{ column.key }}</h3>
+          <app-line-chart
+            [data]="chartsData[column.key]"
+            [xAxisLabel]="'Respuesta'"
+            [yAxisLabel]="'Cantidad'"
+          >
+          </app-line-chart>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Color, ScaleType } from '@swimlane/ngx-charts';
 import { ISingleChartItem } from '../../../interfaces/single-chart-item.interface';
 

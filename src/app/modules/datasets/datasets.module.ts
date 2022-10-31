@@ -4,7 +4,7 @@ import { FileUploaderModule } from '../../shared/components/file-uploader/file-u
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { SharedModule } from '../../shared/shared.module';
-import { CsvViewerModule } from '../../shared/components/csv-viewer/csv-viewer.module';
+import { CsvTableModule } from '../../shared/components/csv-viewer/components/csv-table/csv-table.module';
 import { DatasetsRoutingModule } from './datasets-routing.module';
 import { DatasetDetailsModule } from './dataset-details/dataset-details.module';
 import { SkeletonModule } from '../../shared/components/skeleton/skeleton.module';
@@ -20,7 +20,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     FileUploaderModule,
     MatTableModule,
     MatSortModule,
-    CsvViewerModule,
+    CsvTableModule,
     DatasetsRoutingModule,
     DatasetDetailsModule,
     SkeletonModule,
