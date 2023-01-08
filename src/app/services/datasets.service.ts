@@ -28,7 +28,7 @@ export class DatasetsService {
   }
 
   uploadDataset(data: IDatasetInput): Observable<IDataset> {
-    const url = `${environment.backend.uri}/datasets/upload`;
+    const url = `${environment.backend.uri}/files/upload`;
     const formData = new FormData();
     formData.append('file', data.file);
     formData.append('encoding', data.encoding);
