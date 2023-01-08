@@ -1,3 +1,39 @@
 <div fxFill fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="20px">
   <app-page-title title="Métricas"></app-page-title>
+
+  <ng-container *ngIf="dataSource">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      <ng-container matColumnDef="fileName">
+        <th mat-header-cell *matHeaderCellDef>Archivo</th>
+        <td mat-cell *matCellDef="let file">
+          <pre>{{ file.file_path }}</pre>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let file">
+          <div fxLayout="row" fxLayoutGap="10px">
+            <button mat-stroked-button color="primary">
+              <!-- (click)="openDataset(file.file_path)" -->
+              <mat-icon>visibility</mat-icon>
+              Ver
+            </button>
+            <button mat-stroked-button color="primary">
+              <!-- (click)="downloadDataset(file.file_path)" -->
+              <mat-icon>download</mat-icon>
+              Descargar
+            </button>
+          </div>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr mat-row *matRowDef="let row; columns: columns"></tr>
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" [attr.colspan]="columns.length">
+          No se encontraron registros.
+        </td>
+      </tr>
+    </table>
+  </ng-container>
 </div>
