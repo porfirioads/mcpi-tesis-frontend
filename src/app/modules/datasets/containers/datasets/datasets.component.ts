@@ -86,7 +86,7 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
   confirmPreprocess(fileName: string) {
     this.confirmDialogService.show(
       'Preprocesar dataset',
-      '¿Estás seguro que deseas preprocesar el dataset?\n\nEsta tarea transformará el dataset y generará versiones\ncon nuevas características, por lo que deberás esperar\nalgunos minutos a que el proceso finalice.\n\nLos resultados podrás verlos en menú "Preprocesados".\n',
+      '¿Estás seguro que deseas preprocesar el dataset?\n\nEsta tarea transformará el dataset y generará versiones con nuevas características, por lo que deberás esperar algunos minutos a que el proceso finalice.\n\nLos resultados podrás verlos en menú "Preprocesados".',
       [
         {
           color: 'primary',

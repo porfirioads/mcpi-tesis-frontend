@@ -25,8 +25,11 @@
               Descargar
             </button>
 
-            <button mat-stroked-button color="primary">
-              <!-- (click)="downloadDataset(file.file_path)" -->
+            <button
+              mat-stroked-button
+              color="primary"
+              (click)="confirmClassify(file.file_path)"
+            >
               <mat-icon>model_training</mat-icon>
               Clasificar
             </button>
