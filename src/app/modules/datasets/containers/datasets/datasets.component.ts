@@ -83,10 +83,10 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
     this.showLoading();
   }
 
-  confirmDeleteDataset(fileName: string) {
+  confirmPreprocess(fileName: string) {
     this.confirmDialogService.show(
-      'Eliminar dataset',
-      '¿Estás seguro que deseas eliminar el dataset?\n\nEsta acción no se puede deshacer',
+      'Preprocesar dataset',
+      '¿Estás seguro que deseas preprocesar el dataset?\n\nEsta tarea transformará el dataset y generará versiones\ncon nuevas características, por lo que deberás esperar\nalgunos minutos a que finalice.\n',
       [
         {
           color: 'primary',
@@ -96,18 +96,18 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
         },
         {
           color: 'primary',
-          text: 'Eliminar',
+          text: 'Continuar',
           type: 'mat-raised-button',
           action: () => {
-            this.deleteDataset(fileName);
+            this.preprocess(fileName);
           },
         },
       ],
     );
   }
 
-  private deleteDataset(fileName: string) {
-    console.log('Eliminando dataset', fileName);
+  private preprocess(fileName: string) {
+    console.log('Preprocesanto dataset', fileName);
   }
 
   async downloadDataset(fileName: string) {

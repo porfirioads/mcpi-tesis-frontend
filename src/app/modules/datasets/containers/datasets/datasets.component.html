@@ -41,6 +41,15 @@
             >
               <mat-icon>download</mat-icon>
             </button>
+            <button
+              class="action-button"
+              mat-mini-fab
+              color="primary"
+              matTooltip="Preprocesar"
+              (click)="confirmPreprocess(file.file_path)"
+            >
+              <mat-icon>account_tree</mat-icon>
+            </button>
           </div>
         </td>
       </ng-container>
