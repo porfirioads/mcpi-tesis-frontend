@@ -14,6 +14,7 @@ export class AppComponent {
     { icon: 'view_list', url: 'datasets', label: 'Datasets' },
     { icon: 'account_tree', url: 'preprocessed', label: 'Preprocesados' },
     { icon: 'model_training', url: 'classified', label: 'Clasificados' },
-    { icon: 'analytics', url: 'visualization', label: 'Visualización' },
+    { icon: 'insights', url: 'metrics', label: 'Métricas' },
+    { icon: 'display_settings', url: 'visualization', label: 'Resultados' },
   ];
 }

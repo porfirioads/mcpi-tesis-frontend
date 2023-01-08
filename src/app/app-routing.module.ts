@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClassifiedComponent } from './modules/classified/containers/classified/classified.component';
+import { MetricsComponent } from './modules/metrics/containers/metrics/metrics.component';
 import { PreprocessedComponent } from './modules/preprocessed/containers/preprocessed/preprocessed.component';
 import { VisualizationComponent } from './modules/visualization/containers/visualization/visualization.component';
 import { WelcomeComponent } from './modules/welcome/containers/welcome/welcome.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   },
   { path: 'preprocessed', component: PreprocessedComponent },
   { path: 'classified', component: ClassifiedComponent },
+  { path: 'metrics', component: MetricsComponent },
   { path: 'visualization', component: VisualizationComponent },
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '/404' },

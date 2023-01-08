@@ -10,6 +10,7 @@ import { CleaningModule } from './modules/preprocessed/preprocessed.module';
 import { ClassifiedModule } from './modules/classified/classified.module';
 import { VisualizationModule } from './modules/visualization/visualization.module';
 import { NotFoundModule } from './shared/components/not-found/not-found.module';
+import { MetricsModule } from './modules/metrics/metrics.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import { NotFoundModule } from './shared/components/not-found/not-found.module';
     DatasetsModule,
     CleaningModule,
     ClassifiedModule,
+    MetricsModule,
     VisualizationModule,
     NotFoundModule,
   ],
