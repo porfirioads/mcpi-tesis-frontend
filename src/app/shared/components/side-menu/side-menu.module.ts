@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { SideMenuComponent } from './containers/side-menu.component';
+import { SideMenuComponent } from './containers/side-menu/side-menu.component';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { HeaderModule } from '../header/header.module';

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { DatasetDetailsComponent } from './containers/dataset-details.component';
+import { DatasetDetailsComponent } from './containers/dataset-details/dataset-details.component';
 import { SharedModule } from '../../../shared/shared.module';
 import { PageTitleModule } from '../../../shared/components/page-title/page-title.module';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';

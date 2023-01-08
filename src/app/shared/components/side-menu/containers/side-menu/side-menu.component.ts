@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IMenuOption } from '../interfaces/menu-option.interface';
+import { IMenuOption } from '../../interfaces/menu-option.interface';
 
 @Component({
   selector: 'app-side-menu',

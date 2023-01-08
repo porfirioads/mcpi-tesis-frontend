@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Timer } from '../../../utils/timer';
+import { Timer } from '../../../../utils/timer';
 
 @Component({
   selector: 'app-file-uploader',

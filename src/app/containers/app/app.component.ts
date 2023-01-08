@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IMenuOption } from '../shared/components/side-menu/interfaces/menu-option.interface';
+import { IMenuOption } from '../../shared/components/side-menu/interfaces/menu-option.interface';
 
 @Component({
   selector: 'app-root',

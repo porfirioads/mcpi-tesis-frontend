@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ClassificationComponent } from './modules/classification/containers/classification.component';
-import { CleaningComponent } from './modules/cleaning/containers/cleaning.component';
-import { TrainingComponent } from './modules/training/containers/training.component';
-import { VisualizationComponent } from './modules/visualization/containers/visualization.component';
-import { WelcomeComponent } from './modules/welcome/containers/welcome.component';
-import { NotFoundComponent } from './shared/components/not-found/containers/not-found.component';
+import { ClassificationComponent } from './modules/classification/containers/classification/classification.component';
+import { CleaningComponent } from './modules/cleaning/containers/cleaning/cleaning.component';
+import { TrainingComponent } from './modules/training/containers/training/training.component';
+import { VisualizationComponent } from './modules/visualization/containers/visualization/visualization.component';
+import { WelcomeComponent } from './modules/welcome/containers/welcome/welcome.component';
+import { NotFoundComponent } from './shared/components/not-found/containers/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },

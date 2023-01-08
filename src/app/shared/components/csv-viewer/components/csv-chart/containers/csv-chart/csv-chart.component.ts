@@ -6,7 +6,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { ISingleChartItem } from '@src/app/shared/components/charts/interfaces/single-chart-item.interface';
-import { CsvParserService } from '../../../services/csv-parser.service';
+import { CsvParserService } from '../../../../services/csv-parser.service';
 
 @Component({
   selector: 'app-csv-chart',

@@ -1,9 +1,13 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef, MatDialogState } from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogRef,
+  MatDialogState,
+} from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { DatasetsService } from '@src/app/services/datasets.service';
 import { NotificationService } from '@src/app/services/notification.service';
-import { LoadingComponent } from '@src/app/shared/components/loading/containers/loading.component';
+import { LoadingComponent } from '@src/app/shared/components/loading/containers/loading/loading.component';
 import { IFile } from '@src/app/shared/interfaces/dataset.interface';
 import { lastValueFrom } from 'rxjs';
 

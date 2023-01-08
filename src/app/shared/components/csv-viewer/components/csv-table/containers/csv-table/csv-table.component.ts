@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { CsvParserService } from '../../../services/csv-parser.service';
+import { CsvParserService } from '../../../../services/csv-parser.service';
 
 @Component({
   selector: 'app-csv-table',

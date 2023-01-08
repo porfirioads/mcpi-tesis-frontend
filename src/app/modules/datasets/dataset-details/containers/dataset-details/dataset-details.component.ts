@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DatasetsService } from '@src/app/services/datasets.service';
-import { IDataset } from '../../../../shared/interfaces/dataset.interface';
+import { IDataset } from '../../../../../shared/interfaces/dataset.interface';
 import { lastValueFrom } from 'rxjs';
 import { ISingleChartItem } from '@src/app/shared/components/charts/interfaces/single-chart-item.interface';
 
