@@ -11,9 +11,9 @@ export class AppComponent {
 
   menuOptions: IMenuOption[] = [
     { icon: 'home', url: 'welcome', label: 'Inicio' },
-    { icon: 'datasets', url: 'datasets', label: 'Datasets' },
+    { icon: 'view_list', url: 'datasets', label: 'Datasets' },
     { icon: 'account_tree', url: 'preprocessed', label: 'Preprocesados' },
-    { icon: 'view_list', url: 'classified', label: 'Clasificados' },
+    { icon: 'model_training', url: 'classified', label: 'Clasificados' },
     { icon: 'analytics', url: 'visualization', label: 'Visualización' },
   ];
 }
