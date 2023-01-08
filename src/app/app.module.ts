@@ -6,9 +6,8 @@ import { SideMenuModule } from './shared/components/side-menu/side-menu.module';
 import { AppRoutingModule } from './app-routing.module';
 import { WelcomeModule } from './modules/welcome/welcome.module';
 import { DatasetsModule } from './modules/datasets/datasets.module';
-import { CleaningModule } from './modules/cleaning/cleaning.module';
-import { TrainingModule } from './modules/training/training.module';
-import { ClassificationModule } from './modules/classification/classification.module';
+import { CleaningModule } from './modules/preprocessed/preprocessed.module';
+import { ClassifiedModule } from './modules/classified/classified.module';
 import { VisualizationModule } from './modules/visualization/visualization.module';
 import { NotFoundModule } from './shared/components/not-found/not-found.module';
 
@@ -22,8 +21,7 @@ import { NotFoundModule } from './shared/components/not-found/not-found.module';
     WelcomeModule,
     DatasetsModule,
     CleaningModule,
-    TrainingModule,
-    ClassificationModule,
+    ClassifiedModule,
     VisualizationModule,
     NotFoundModule,
   ],

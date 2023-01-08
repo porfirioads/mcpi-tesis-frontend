@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ClassificationComponent } from './modules/classification/containers/classification/classification.component';
-import { CleaningComponent } from './modules/cleaning/containers/cleaning/cleaning.component';
-import { TrainingComponent } from './modules/training/containers/training/training.component';
+import { ClassifiedComponent } from './modules/classified/containers/classified/classified.component';
+import { PreprocessedComponent } from './modules/preprocessed/containers/preprocessed/preprocessed.component';
 import { VisualizationComponent } from './modules/visualization/containers/visualization/visualization.component';
 import { WelcomeComponent } from './modules/welcome/containers/welcome/welcome.component';
 import { NotFoundComponent } from './shared/components/not-found/containers/not-found/not-found.component';
@@ -17,9 +16,8 @@ const routes: Routes = [
         (m) => m.DatasetsModule,
       ),
   },
-  { path: 'cleaning', component: CleaningComponent },
-  { path: 'training', component: TrainingComponent },
-  { path: 'classification', component: ClassificationComponent },
+  { path: 'preprocessed', component: PreprocessedComponent },
+  { path: 'classified', component: ClassifiedComponent },
   { path: 'visualization', component: VisualizationComponent },
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '/404' },

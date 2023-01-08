@@ -12,11 +12,11 @@ import { IFile } from '@src/app/shared/interfaces/dataset.interface';
 import { lastValueFrom } from 'rxjs';
 
 @Component({
-  selector: 'app-cleaning',
-  templateUrl: './cleaning.component.html',
-  styleUrls: ['./cleaning.component.scss'],
+  selector: 'app-preprocessed',
+  templateUrl: './preprocessed.component.html',
+  styleUrls: ['./preprocessed.component.scss'],
 })
-export class CleaningComponent implements OnInit, AfterViewInit {
+export class PreprocessedComponent implements OnInit, AfterViewInit {
   private loadingDialog?: MatDialogRef<LoadingComponent>;
   dataSource?: MatTableDataSource<IFile>;
   columns = ['fileName', 'actions'];
