@@ -1,3 +1,7 @@
+export interface IFile {
+  file_path: string;
+}
+
 export interface IDataset {
   row_count: number;
   col_count: number;

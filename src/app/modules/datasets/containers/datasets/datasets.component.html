@@ -14,21 +14,21 @@
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
       <ng-container matColumnDef="fileName">
         <th mat-header-cell *matHeaderCellDef>Archivo</th>
-        <td mat-cell *matCellDef="let fileName">
-          <pre>{{ fileName }}</pre>
+        <td mat-cell *matCellDef="let file">
+          <pre>{{ file.file_path }}</pre>
         </td>
       </ng-container>
 
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef>Acciones</th>
-        <td mat-cell *matCellDef="let fileName">
+        <td mat-cell *matCellDef="let file">
           <div fxLayout="row" fxLayoutGap="10px">
             <button
               class="action-button"
               mat-mini-fab
               color="primary"
               matTooltip="Vista previa"
-              (click)="openDataset(fileName)"
+              (click)="openDataset(file.file_path)"
             >
               <mat-icon>visibility</mat-icon>
             </button>
@@ -37,18 +37,9 @@
               mat-mini-fab
               color="primary"
               matTooltip="Descargar"
-              (click)="downloadDataset(fileName)"
+              (click)="downloadDataset(file.file_path)"
             >
               <mat-icon>download</mat-icon>
-            </button>
-            <button
-              class="action-button"
-              mat-mini-fab
-              color="warn"
-              matTooltip="Eliminar"
-              (click)="confirmDeleteDataset(fileName)"
-            >
-              <mat-icon>delete</mat-icon>
             </button>
           </div>
         </td>

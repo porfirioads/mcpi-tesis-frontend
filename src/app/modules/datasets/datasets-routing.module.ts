@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DatasetsComponent } from './containers/datasets.component';
+import { DatasetsComponent } from './containers/datasets/datasets.component';
 import { DatasetDetailsComponent } from './dataset-details/containers/dataset-details.component';
 
 const routes: Routes = [

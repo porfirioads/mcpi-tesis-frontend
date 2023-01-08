@@ -47,7 +47,7 @@ export class DatasetDetailsComponent implements OnInit {
     );
 
     const blob = await lastValueFrom(
-      this.datasetsService.downloadDataset(this.id),
+      this.datasetsService.downloadDataset('uploads', this.id),
     );
 
     this.datasetFile = new File([blob], this.id, { type: blob.type });

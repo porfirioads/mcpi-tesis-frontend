@@ -5,12 +5,13 @@ import {
   MatDialogState,
 } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
-import { DatasetsService } from '../../../services/datasets.service';
+import { DatasetsService } from '../../../../services/datasets.service';
 import { lastValueFrom } from 'rxjs';
-import { LoadingComponent } from '../../../shared/components/loading/containers/loading.component';
+import { LoadingComponent } from '../../../../shared/components/loading/containers/loading.component';
 import { Router } from '@angular/router';
-import { NotificationService } from '../../../services/notification.service';
+import { NotificationService } from '../../../../services/notification.service';
 import { ConfirmDialogService } from '@src/app/shared/components/confirm-dialog/services/confirm-dialog.service';
+import { IFile } from '@src/app/shared/interfaces/dataset.interface';
 
 @Component({
   selector: 'app-datasets',
@@ -19,7 +20,7 @@ import { ConfirmDialogService } from '@src/app/shared/components/confirm-dialog/
 })
 export class DatasetsComponent implements OnInit, AfterViewInit {
   private loadingDialog?: MatDialogRef<LoadingComponent>;
-  dataSource?: MatTableDataSource<string>;
+  dataSource?: MatTableDataSource<IFile>;
   columns = ['fileName', 'actions'];
 
   constructor(
@@ -40,7 +41,9 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
     this.showLoading();
 
     try {
-      const datasets = await lastValueFrom(this.datasetsService.getDatasets());
+      const datasets = await lastValueFrom(
+        this.datasetsService.getDatasets('uploads'),
+      );
       this.dataSource = new MatTableDataSource(datasets);
     } catch (err) {
       this.notificationService.error(
@@ -110,7 +113,7 @@ export class DatasetsComponent implements OnInit, AfterViewInit {
   async downloadDataset(fileName: string) {
     try {
       const blob = await lastValueFrom(
-        this.datasetsService.downloadDataset(fileName),
+        this.datasetsService.downloadDataset('uploads', fileName),
       );
       const anchor = document.createElement('a');
       anchor.download = fileName;

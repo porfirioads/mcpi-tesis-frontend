@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import {
   IDataset,
   IDatasetInput,
+  IFile,
 } from '../shared/interfaces/dataset.interface';
 import { environment } from '../../environments/environment';
 
@@ -16,9 +17,9 @@ export class DatasetsService {
 
   constructor(private http: HttpClient) {}
 
-  getDatasets(): Observable<string[]> {
-    const url = `${environment.backend.uri}/datasets`;
-    return this.http.get<string[]>(url);
+  getDatasets(path: string): Observable<IFile[]> {
+    const url = `${environment.backend.uri}/files`;
+    return this.http.get<IFile[]>(url, { params: { path } });
   }
 
   getDataset(fileName: string): Observable<IDataset> {
@@ -35,10 +36,10 @@ export class DatasetsService {
     return this.http.post<IDataset>(url, formData);
   }
 
-  downloadDataset(fileName: string): Observable<Blob> {
-    const url = `${environment.backend.uri}/datasets/download`;
-    const params = { file_path: fileName };
-    return this.http.get(url, { responseType: 'blob', params });
+  downloadDataset(path: string, fileName: string): Observable<Blob> {
+    const url = `${environment.backend.uri}/files/download`;
+    const params = { file_path: `${path}/${fileName}` };
+    return this.http.post(url, {}, { responseType: 'blob', params });
   }
 
   deleteDataset(fileName: string): Observable<IDataset> {

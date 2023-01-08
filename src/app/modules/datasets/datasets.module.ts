@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { DatasetsComponent } from './containers/datasets.component';
+import { DatasetsComponent } from './containers/datasets/datasets.component';
 import { FileUploaderModule } from '../../shared/components/file-uploader/file-uploader.module';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
