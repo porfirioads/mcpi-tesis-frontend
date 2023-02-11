@@ -23,7 +23,7 @@ export class DatasetsService {
   }
 
   getDataset(fileName: string): Observable<IDataset> {
-    const url = `${environment.backend.uri}/datasets/details/${fileName}`;
+    const url = `${environment.backend.uri}/preprocessing/details/${fileName}`;
     return this.http.get<IDataset>(url);
   }
 
