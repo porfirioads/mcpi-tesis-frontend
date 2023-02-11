@@ -1,5 +1,24 @@
-<mat-card>
-  <mat-card-content>
-    <h1>Wordclouds by question</h1>
-  </mat-card-content>
-</mat-card>
+<div fxLayout="column" fxLayoutGap="20px">
+  <mat-card *ngFor="let wordcloud of questionWordclouds">
+    <mat-card-content>
+      <h1>{{ wordcloud.question }}</h1>
+
+      <div fxLayout="row" fxLayoutGap="20px">
+        <div>
+          <h2>General</h2>
+          <img [src]="wordcloud.wordcloud" />
+        </div>
+
+        <div>
+          <h2>Positives</h2>
+          <img [src]="wordcloud.wordcloud_pos" />
+        </div>
+
+        <div>
+          <h2>Negatives</h2>
+          <img [src]="wordcloud.wordcloud_neg" />
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
